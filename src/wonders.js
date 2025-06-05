@@ -1,41 +1,32 @@
 import React from 'react';
 
+  const block = 
+  {
+     padding: "30px" 
+    };
+  const nameStyle = 
+  { 
+    fontSize: "32px", 
+    color: "black" 
+};
+  const detailsStyle = 
+  { 
+    fontSize: "16px", 
+    color: "grey" 
+};
+  const imageStyle = 
+  {
+     width: "200px" 
+    };
 
 
-export class Cards extends React.Component
+export function Cards(props) 
 {
-    render()
-    {
-        const block={
-            padding:"30px"
-        }
-    const name ={
-fontSize:"32px",
-color:"Black"
-    }
-    const details ={
-        fontSize:"16px",
-color:"Grey"
-    }
-    const image={
-        width:"200px"
-    }
-return <div style = {block}>
-{this.props.wonders.map((wonder)=>(
-<div>
-<div style = {name}>
-    {wonder.name}
-</div>
-
-<img src= {wonder.imageURL} alt = {wonder.name}style = {image}/>
-
-<div style = {details}>
-    {wonder.details}
-</div>
-</div>
-))}
-
-
-</div>
-    }
+  return (
+    <div style={block}>
+      <div style={nameStyle}>{props.name}</div>
+      <img src={props.imageUrl} alt={props.name} style={imageStyle} />
+      <div style={detailsStyle}>{props.details}</div>
+    </div>
+  );
 }
